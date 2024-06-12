@@ -1,6 +1,8 @@
 #pragma once
 
 #include "raylib.h"
+#include "TextureAtlasSprite.h"
+
 
 namespace goldgame {
     class SpriteAtlas {
@@ -8,7 +10,7 @@ namespace goldgame {
         SpriteAtlas(const char* path, int offset_x, int offset_y, int width, int height);
         ~SpriteAtlas();
 
-        void RenderImageFromSpriteAtlas(int index_x, int index_y, float x, float y, float scale);
+        TextureAtlasSprite RenderImageFromSpriteAtlas(TextureAtlasSprite);
 
     private:
         Texture2D m_texture;

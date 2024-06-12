@@ -1,5 +1,6 @@
 #include "SpriteAtlas.h"
 
+
 namespace goldgame {
 
         SpriteAtlas::SpriteAtlas(const char *path, int offset_x, int offset_y, int width, int height) {
@@ -14,9 +15,8 @@ namespace goldgame {
             UnloadTexture(m_texture);
         }
 
-        void SpriteAtlas::RenderImageFromSpriteAtlas(int index_x, int index_y, float x, float y, float scale=1) {
-            Rectangle sourceRec = { (float)(m_offset_x * index_x), (float)(m_offset_y * index_y), (float)m_width, (float)m_height };
-            Rectangle destRec = { x, y, (float)m_width*scale, (float)m_height*scale };
-            DrawTexturePro(m_texture, sourceRec, destRec, { 0, 0 }, 0, WHITE);
+        TextureAtlasSprite SpriteAtlas::RenderImageFromSpriteAtlas(TextureAtlasSprite texture_atlas_sprite) {
+            texture_atlas_sprite.Render();
+            return texture_atlas_sprite;
         }
 } // goldgame

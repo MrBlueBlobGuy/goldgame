@@ -33,9 +33,19 @@ add_executable(${PROJECT_NAME}
         Sprite.h
         SpriteAtlas.cpp
         SpriteAtlas.h
+        Scene.cpp
+        Scene.h
+        TextureAtlasSprite.cpp
+        TextureAtlasSprite.h
+        GameScenes/TestScene.cpp
+        GameScenes/TestScene.h
+        Register.cpp
+        Register.h
 )
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Web Configurations
 if (${PLATFORM} STREQUAL "Web")
